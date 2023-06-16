@@ -1,0 +1,63 @@
+<div class="row my-4 justify-content-center">
+    <div class="col-md-5">
+        <div class="top_1m">
+          <div class="input-group">
+            <input
+                (change)="searchMovies()" [(ngModel)]="searchValue" 
+              type="text"
+              class="form-control bg-black"
+              placeholder="Search movie..."
+            />
+            <span class="input-group-btn">
+              <button
+                class="btn btn text-white bg_red rounded-0 border-0"
+                type="button"
+              >
+                Search
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="container">
+<div class="row my-4">
+    <div class="col-md-2"  *ngFor="let movie of movies">
+        <div class="card my-2">
+            <a [routerLink]="['/showmovies', movie.id]" style="text-decoration: none; color: black;">
+                <img class="card-img-top" *ngIf="movie.poster_path" [src]="'https://image.tmdb.org/t/p/w300'+ movie.poster_path" [alt]="movie.original_title">
+                <img style="width: 100%; height: 100%;" class="card-img-top" *ngIf="!movie.poster_path" src="https://cdn-icons-png.flaticon.com/512/7465/7465751.png" [alt]="movie.original_title">
+
+            </a>
+            <div class="card-body" style="height: 90px;">
+                <a [routerLink]="['/showmovie', movie.id]" style="text-decoration: none; color: black;">
+                    <h6 class="card-title" >{{movie.original_title}}</h6>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="pages my-3">
+        <div class="col-md-12">
+          <ul class="mb-0">
+           <li><a href="blog_detail.html"><i class="fa fa-chevron-left"></i></a></li>
+           <li><a class="act" href="blog_detail.html">1</a></li>
+           <li><a href="">2</a></li>
+           <li><a href="">3</a></li>
+           <li><a href="">4</a></li>
+           <li><a href="">5</a></li>
+           <li><a href="">6</a></li>
+           <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+          </ul>
+        </div>
+    </div>
+
+    <p-paginator class="my-3" (onPageChange)="pagination($event)" [rows]="20" [totalRecords]="10930"></p-paginator>
+    
+    
+</div>
+
+
+</div>
+

@@ -1,0 +1,46 @@
+<div class="row my-2 ">
+    <div class="col-md-2" *ngFor="let similar of similarTv">
+      <div class=" position-relative clearfix">
+        <div class="popular_2i1lm1 clearfix">
+          <div class="grid">
+            <figure class="effect-jazz mb-0">
+              <a href="#"
+                ><img [src]="'https://image.tmdb.org/t/p/w300'+ similar.poster_path" [alt]="similar.original_title" class="w-100" 
+              /></a>
+            </figure>
+          </div>
+        </div>
+        <div
+          class="popular_2i1lm2 position-absolute top-0 w-100 text-center clearfix"
+        >
+          <ul>
+            <li class="d-inline-block">
+              <a href="#"><i class="fa fa-link col_red"></i></a>
+            </li>
+            <li class="d-inline-block">
+              <a href="#"><i class="fa fa-search col_red"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p-paginator class="my-3" (onPageChange)="pagination($event)" [rows]="20" [totalRecords]="10930"></p-paginator>
+  
+  
+  <!-- <div class="row">
+    <div class="col-md-2" *ngFor="let similar of similarTv">
+      <div class="card my-2" >
+        <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w300'+ similar.poster_path" [alt]="similar.original_title">
+        <div class="card-body">
+            <a [routerLink]="['/showmovie', similar.id]" style="text-decoration: none; color: black;">
+                <h6 class="card-title" >{{similar.original_title}}</h6>
+            </a>
+        </div>
+    </div>
+    </div>
+  
+  </div> -->
+  
+  

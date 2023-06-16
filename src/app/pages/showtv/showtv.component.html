@@ -1,0 +1,176 @@
+<section id="center" class="center_o pt-2 pb-2" style="background-color: rgb(221, 221, 221);">
+    <div class="container-xl">
+     <div class="row center_o1">
+      <div class="col-md-5">
+        <div class="center_o1l">
+         <h2 class="mb-0">Tv Shows id</h2>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="center_o1r text-end">
+         <h6 class="mb-0 col_red"><a routerLink="home">Home</a> <span class="me-2 ms-2 text-light"><i class="fa fa-caret-right align-middle"></i></span> Tv Shows</h6>
+        </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <div class="row">
+    <div class="spec_m">
+      <div class="container-xl">
+        <div class="spec_1 row">
+          <div class="col-md-3 col-6">
+            <div class="spec_1i text-center p-4">
+              <span class="font_60 col_red"
+                ><i class="fa fa-calendar-o"></i
+              ></span>
+              <h1>{{ tv.first_air_date }}</h1>
+              <h5>first air date</h5>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="spec_1i text-center p-4">
+              <span class="font_60 col_red"><i class="fa fa-bar-chart"></i></span>
+              <h1>{{ tv.vote_average }}</h1>
+              <h5>vote Average</h5>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="spec_1i text-center p-4">
+              <span class="font_60 col_red"><i class="fa fa-tags"></i></span>
+              <h1>{{ tv.popularity }}</h1>
+              <h5>Popularity</h5>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="spec_1i text-center p-4">
+              <span class="font_60 col_red"><i class="fa fa-smile-o"></i></span>
+              <h1>{{ tv.vote_count }}</h1>
+              <h5>vote Count</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <img
+        [src]="'https://image.tmdb.org/t/p/original' + tv.backdrop_path"
+        alt=""
+      />
+      <div class="col-md-4">
+        <div class="spec_m">
+          <div class="container-xl">
+            <div class="spec_1 row"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8"></div>
+    </div>
+    <div class="row mx-auto d-flex justify-content-center">
+      <div class="col-md-9">
+        <h1>{{ tv.original_title }}</h1>
+        <p><strong style="color: red;" >Overview :</strong> {{ tv.overview }}</p>
+        <p><strong style="color: red;">Seasons number :</strong> {{ nbsaison }} </p>
+        <a *ngFor="let item of genres" class="bg_red p-2 pe-4 ps-4 mx-2 text-white d-inline-block"  ><strong>{{item.name}}</strong></a>
+  
+      </div>
+    </div>
+  
+    <div class="row mx-auto d-flex justify-content-center my-5">
+      <div class="col-md-3">
+        <div class="">
+          <div class="container-xl">
+            <div class="spec_1 row">
+              <img
+                [src]="'https://image.tmdb.org/t/p/original' + tv.poster_path"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <section id="popular" class="pt-4 pb-5 bg_grey">
+          <div class="container">
+            <div class="row trend_1">
+              <div class="col-md-12">
+                <div class="trend_1l">
+                  <h4 class="mb-0">
+                    <i class="fa fa-youtube-play align-middle col_red me-1"></i>
+                    Movies <span class="col_red">Informations </span>
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <!-- liste ul  -->
+            <div class="row popular_1 mt-4">
+              <ul class="nav nav-tabs border-0 mb-0">
+                <li class="nav-item">
+                  <a
+                  routerLink="TVsimilar"
+                    data-bs-toggle="tab"
+                    aria-expanded="false"
+                    class="nav-link"
+                  >
+                    <span class="d-md-block" >SIMILAR</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                  routerLink="TVactors"
+                    data-bs-toggle="tab"
+                    aria-expanded="true"
+                    class="nav-link"
+                  >
+                    <span class="d-md-block" >ACTORS</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                    routerLink="Tvimages"
+                      data-bs-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      <span class="d-md-block" >IMAGES</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                    routerLink="TVvideos"
+                      data-bs-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      <span class="d-md-block" >VIDEOS</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                    routerLink="seasons"
+                      data-bs-toggle="tab"
+                      aria-expanded="true"
+                      class="nav-link"
+                    >
+                      <span class="d-md-block" >SEASONS</span>
+                    </a>
+                  </li>
+
+              </ul>
+          </div>
+  
+              <!-- contenu -->
+              <div class="my-3">
+                <router-outlet></router-outlet>
+  
+              </div>
+     
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  
+  

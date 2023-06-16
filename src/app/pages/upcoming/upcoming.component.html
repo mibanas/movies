@@ -1,0 +1,54 @@
+<section id="center" class="center_o pt-2 pb-2">
+    <div class="container-xl">
+     <div class="row center_o1">
+      <div class="col-md-5">
+        <div class="center_o1l">
+         <h2 class="mb-0">Upcoming</h2>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="center_o1r text-end">
+         <h6 class="mb-0 col_red"><a routerLink="home">Home</a> <span class="me-2 ms-2 text-light"><i class="fa fa-caret-right align-middle"></i></span> Upcoming</h6>
+        </div>
+      </div>
+     </div>
+    </div>
+   </section>
+
+<section id="popular" class="pt-4 pb-5 bg_grey">
+    <div class="container">
+      <div class="row trend_1">
+        <div class="col-md-12">
+          <div class="trend_1l">
+            <h4 class="mb-0">
+              <i class="fa fa-youtube-play align-middle col_red me-1"></i>
+              Upcoming <span class="col_red">movies</span>
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="row my-3">
+        <div class="col-md-3"  *ngFor="let item of upComing">
+            <div class="card my-2">
+                <a [routerLink]="['/showmovies', item.id]" style="text-decoration: none; color: black;">
+                    <img class="card-img-top"  [src]="'https://image.tmdb.org/t/p/w300'+ item.poster_path" [alt]="item.original_title">
+                </a>
+                <div class="card-body" style="height: 90px;">
+                    <a [routerLink]="['/showmovies', item.id]" style="text-decoration: none; color: black;">
+                        <h6 class="card-title" >{{item.original_title}}</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+       
+      </div>
+
+
+    
+    <p-paginator class="my-3" (onPageChange)="pagination($event)" [rows]="20" [totalRecords]="10930"></p-paginator>
+
+    </div>
+  </section>
+  

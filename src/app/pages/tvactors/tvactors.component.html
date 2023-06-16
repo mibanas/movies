@@ -1,0 +1,46 @@
+<!-- <div class="row">
+  <ng-container *ngFor="let actor of actors">
+    <div class="col-md-3">
+        <div class="card">
+          <img [src]="'https://image.tmdb.org/t/p/w300'+ actor.profile_path" alt="Nom de l'acteur" />
+          <div class="card-content">
+            <h2>{{actor.original_name}}</h2>
+          </div>
+        </div>
+    </div>
+  </ng-container>
+</div> -->
+
+<div class="row">
+    <div class="col-md-3 col-6" *ngFor="let actor of actors">
+        <div class="trend_2im clearfix position-relative">
+          <div class="trend_2im1 clearfix">
+            <div class="grid">
+              <figure class="effect-jazz mb-0">
+                <a href="#"><img *ngIf="actor.profile_path" [src]="'https://image.tmdb.org/t/p/w300'+ actor.profile_path" class="w-100" alt="img25"/></a>
+                <a href="#"><img *ngIf="!actor.profile_path" src="https://cdn-icons-png.flaticon.com/512/7465/7465751.png" class="w-100" alt="img25"/></a>
+              </figure>
+            </div>
+          </div>
+          <div
+            class="trend_2im2 clearfix text-center position-absolute w-100 top-0"
+          >
+         
+          </div>
+        </div>
+        <div class="trend_2ilast bg_grey p-3 clearfix">
+          <h5><a class="col_red" href="#">{{actor.original_name}}</a></h5>
+          <p class="mb-2">
+            character :  {{actor.character}}
+          </p>
+          <span class="col_red">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </span>
+          <p class="mb-0">{{actor.popularity}}</p>
+        </div>
+      </div>
+</div>
